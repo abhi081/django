@@ -1,0 +1,17 @@
+<!-- templates/login_or_register.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Login or Register{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5">Login or Register</h1>
+
+    <form method="post" action="{% url 'login_or_register' %}" class="mt-3">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Login or Register</button>
+    </form>
+</div>
+{% endblock %}
